@@ -42,7 +42,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.mister_ed_test_app_SPN }}
+        creds:  ${{ secrets.AZURE_CREDENTIALS }}
     - name: Deploy to containerapp
       uses: azure/CLI@v1
       with:
