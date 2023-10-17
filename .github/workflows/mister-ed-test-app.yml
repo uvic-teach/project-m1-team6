@@ -55,9 +55,13 @@ jobs:
     - name: logout
       run: >
         az logout
+    - name: find-directory
+      run: |
+        ls -a
+        echo "Current Directory: $(pwd)"
+      shell: bash
     - name: Run EF 
       run: | 
-        ls -l
         dotnet tool install --global dotnet-ef
         dotnet tool restore
         dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
