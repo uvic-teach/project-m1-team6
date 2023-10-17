@@ -60,11 +60,6 @@ jobs:
     - name: logout
       run: >
         az logout
-    - name: find-directory
-      run: |
-        ls -a
-        cd DotNetCoreSqlDb
-        ls -a
     - name: Run EF 
       run: | 
         dotnet tool install --global dotnet-ef
