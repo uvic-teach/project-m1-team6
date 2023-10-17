@@ -13,6 +13,7 @@ builder.Services.AddControllersWithViews();
 
 // Add App Service logging
 builder.Logging.AddAzureWebAppDiagnostics();
+//Test
 
 var app = builder.Build();
 
