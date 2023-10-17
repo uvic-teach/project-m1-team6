@@ -25,8 +25,8 @@ jobs:
       uses: azure/docker-login@v1
       with:
         login-server: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}
-        username: ${{ secrets.DotNetCoreSqlDb20231017081000_USERNAME_7A49 }}
-        password: ${{ secrets.DotNetCoreSqlDb20231017081000_PASSWORD_7A49 }}
+        username: ${{ "primary" }} #${{ secrets.DotNetCoreSqlDb20231017081000_USERNAME_7A49 }}
+        password: ${{ "YellowstoneOrange3" }} #${{ secrets.DotNetCoreSqlDb20231017081000_PASSWORD_7A49 }}
     - name: Build and push container image to registry
       run: dotnet publish -c Release -r linux-x64 -p:PublishProfile=DefaultContainer -p:ContainerImageTag=${{ github.sha }} --no-self-contained -p:ContainerRegistry=${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }} -bl
     - name: Upload binlog for investigation
