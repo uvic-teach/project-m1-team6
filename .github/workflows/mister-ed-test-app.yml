@@ -57,6 +57,7 @@ jobs:
         az logout
     - name: Run EF 
       run: | 
+        ls -l
         dotnet tool install --global dotnet-ef
-        # dotnet tool restore
+        dotnet tool restore
         dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
