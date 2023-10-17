@@ -57,6 +57,7 @@ jobs:
         az logout
     - name: find-directory
       run: |
+        cd ..
         ls -a
         echo "Current Directory: $(pwd)"
       shell: bash
