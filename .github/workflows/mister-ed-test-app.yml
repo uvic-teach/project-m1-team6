@@ -63,6 +63,7 @@ jobs:
         az logout
     - name: Run EF 
       run: | 
+      working-directory: /home/runner/work/project-m1-team6/project-m1-team6
         dotnet tool install --global dotnet-ef
         dotnet tool restore
-        dotnet ef database update -p DotNetCoreSqlDb.sln --connection '${{ secrets.DBConnection }}'
+        dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
