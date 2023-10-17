@@ -16,6 +16,14 @@ jobs:
     steps:
     - name: Checkout to the branch
       uses: actions/checkout@v3
+    - name: find-directory
+      run: |
+        cd ..
+        ls -a
+        echo "Current Directory: $(pwd)"
+        cd ..
+        ls -a
+      shell: bash
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1.8.0
       with:
@@ -55,14 +63,8 @@ jobs:
     - name: logout
       run: >
         az logout
-    - name: find-directory
-      run: |
-        cd ..
-        ls -a
-        echo "Current Directory: $(pwd)"
-      shell: bash
     - name: Run EF 
       run: | 
         dotnet tool install --global dotnet-ef
         dotnet tool restore
-        dotnet ef database update -p DotNetCoreSqlDb --connection '${{ secrets.DBConnection }}'
+        dotnet ef database update -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj --connection '${{ secrets.DBConnection }}'
