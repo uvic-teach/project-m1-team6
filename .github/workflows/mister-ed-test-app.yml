@@ -62,6 +62,7 @@ jobs:
         az logout
     - name: find-directory
       run: |
+        ls -a
         cd DotNetCoreSqlDb
         ls -a
     - name: Run EF 
