@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "misses-ed-app\\bin\\Release\\net7.0\\publish",
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/5f1ba10e-d4f6-49d9-bac2-1de298c56e08/resourceGroups/SENG350/providers/Microsoft.Web/sites/misses-ed"
+}
